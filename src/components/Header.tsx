@@ -17,7 +17,17 @@ export function Header() {
           />
           <span className="text-base tracking-tight text-white">
             <span className="font-bold">Warp</span>
-            <span className="font-serif font-medium italic">Clip</span>
+            <span className="relative inline-block">
+              <span
+                aria-hidden
+                className="absolute inset-x-[-3px] top-[35%] bottom-[2px] -z-10 bg-[#CCFF00]"
+                style={{
+                  transform: "skewX(-3deg) rotate(-0.4deg)",
+                  borderRadius: "8px 4px 12px 6px",
+                }}
+              />
+              <span className="font-serif font-medium italic text-black relative">Clip</span>
+            </span>
           </span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm text-zinc-400 sm:flex">
@@ -29,7 +39,7 @@ export function Header() {
           href={LINE_OA_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-full bg-[#6B8E6F] px-4 py-1.5 text-sm font-medium text-white transition hover:bg-[#7CA080]"
+          className="inline-flex items-center gap-1.5 rounded-full bg-[#CCFF00] px-4 py-1.5 text-sm font-semibold text-black transition hover:bg-[#A8D400]"
         >
           <span>LINE</span>
           <span className="hidden sm:inline">ติดต่อเรา</span>
