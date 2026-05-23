@@ -49,7 +49,7 @@ export function Pricing() {
     <section id="pricing" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
+          <p className="text-xs font-medium uppercase tracking-widest text-zinc-400">
             Pricing
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -79,7 +79,7 @@ export function Pricing() {
               <p className="mt-1 text-sm text-zinc-400">{t.desc}</p>
               <div className="mt-6 flex items-baseline gap-1">
                 <span className="text-4xl font-bold text-white">฿{t.price}</span>
-                {t.unit && <span className="text-sm text-zinc-500">{t.unit}</span>}
+                {t.unit && <span className="text-sm text-zinc-400">{t.unit}</span>}
               </div>
               <ul className="mt-6 space-y-3 text-sm text-zinc-300">
                 {t.features.map((f) => (

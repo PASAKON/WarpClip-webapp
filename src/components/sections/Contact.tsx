@@ -34,7 +34,7 @@ export function Contact() {
               </a>
             </div>
 
-            <p className="mt-8 text-xs text-zinc-500">
+            <p className="mt-8 text-xs text-zinc-400">
               เปิดให้บริการ จ.–ส. · 09:00–20:00 (GMT+7)
             </p>
           </div>
