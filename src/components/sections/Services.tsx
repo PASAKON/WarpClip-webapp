@@ -1,33 +1,42 @@
-const SERVICES = [
+import { Scissors, Volume2, Wand2, UserCheck, Film, LayoutTemplate } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+type Service = {
+  title: string;
+  desc: string;
+  Icon: LucideIcon;
+};
+
+const SERVICES: Service[] = [
   {
     title: "Short-Form Editing",
     desc: "ตัดต่อคลิปสั้น TikTok / Reels / Shorts ตามสไตล์แบรนด์คุณ. Hook แรง, ตัดจังหวะกับเสียง, sub-title อ่านง่าย.",
-    icon: "✂️",
+    Icon: Scissors,
   },
   {
     title: "Subtitle & Sound FX",
     desc: "ใส่ sub-title sync เสียง + sound effect ทำให้คลิปไม่ silent. Multi-language ได้ (ไทย/อังกฤษ).",
-    icon: "🔊",
+    Icon: Volume2,
   },
   {
     title: "Color Grading",
     desc: "ปรับสีให้ดูพรีเมียม. Match วิดีโอชุดเดียวกันให้ feel เดียวกัน. รองรับ LUT จากคุณได้.",
-    icon: "🎨",
+    Icon: Wand2,
   },
   {
     title: "Talking Head Cut",
     desc: "ตัด filler word ('เออ', 'อ่า', 'um') ออกหมด. ทำให้พูดต่อเนื่อง 80-90% ของเวลาคลิป.",
-    icon: "🗣️",
+    Icon: UserCheck,
   },
   {
     title: "B-Roll Sourcing",
     desc: "หาฟุตเทจ stock + จัดวางเสริมจุด narrative. คุณส่งบทมา เราเสริมภาพให้.",
-    icon: "🎬",
+    Icon: Film,
   },
   {
     title: "Thumbnail Design",
     desc: "ทำ thumbnail สำหรับ YouTube Shorts + horizontal repost. CTR-optimized.",
-    icon: "🖼️",
+    Icon: LayoutTemplate,
   },
 ];
 
@@ -48,15 +57,17 @@ export function Services() {
         </div>
 
         <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((s) => (
+          {SERVICES.map(({ title, desc, Icon }) => (
             <div
-              key={s.title}
+              key={title}
               className="group relative overflow-hidden rounded-2xl border border-white/8 bg-zinc-900 p-6 transition hover:border-[#CCFF00]/30"
             >
-              <div className="text-3xl">{s.icon}</div>
-              <h3 className="mt-4 text-lg font-semibold text-white">{s.title}</h3>
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-800 text-[#CCFF00] transition group-hover:bg-[#CCFF00]/10">
+                <Icon size={20} strokeWidth={1.75} aria-hidden="true" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-white">{title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-zinc-400">
-                {s.desc}
+                {desc}
               </p>
             </div>
           ))}
