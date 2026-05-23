@@ -51,7 +51,7 @@ export function Hero() {
           ].map((s) => (
             <div key={s.v}>
               <dt className="text-2xl font-bold text-white sm:text-4xl">{s.k}</dt>
-              <dd className="mt-1 text-xs text-zinc-500 sm:text-sm">{s.v}</dd>
+              <dd className="mt-1 text-xs text-zinc-400 sm:text-sm">{s.v}</dd>
             </div>
           ))}
         </dl>
