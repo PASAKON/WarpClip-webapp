@@ -28,7 +28,7 @@ export function Header() {
           href={LINE_OA_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500 px-4 py-1.5 text-sm font-medium text-zinc-950 transition hover:bg-emerald-400"
+          className="inline-flex items-center gap-1.5 rounded-full bg-[#CCFF00] px-4 py-1.5 text-sm font-semibold text-zinc-950 transition hover:bg-[#A8D400]"
         >
           <span>LINE</span>
           <span className="hidden sm:inline">ติดต่อเรา</span>

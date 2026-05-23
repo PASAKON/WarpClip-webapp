@@ -49,7 +49,7 @@ export function Pricing() {
     <section id="pricing" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-violet-400">
+          <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Pricing
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -66,12 +66,12 @@ export function Pricing() {
               key={t.name}
               className={`relative overflow-hidden rounded-2xl border p-8 ${
                 t.accent
-                  ? "border-indigo-500/50 bg-gradient-to-b from-indigo-500/10 to-violet-600/5"
-                  : "border-white/5 bg-white/[0.02]"
+                  ? "border-[#CCFF00]/50 bg-[#CCFF00]/[0.04]"
+                  : "border-white/8 bg-zinc-900"
               }`}
             >
               {t.accent && (
-                <div className="absolute right-4 top-4 rounded-full bg-indigo-500/20 px-3 py-1 text-xs font-medium text-indigo-300 ring-1 ring-indigo-400/30">
+                <div className="absolute right-4 top-4 rounded-full bg-[#CCFF00] px-3 py-1 text-xs font-semibold text-zinc-950">
                   ขายดี
                 </div>
               )}
@@ -84,7 +84,7 @@ export function Pricing() {
               <ul className="mt-6 space-y-3 text-sm text-zinc-300">
                 {t.features.map((f) => (
                   <li key={f} className="flex items-start gap-2">
-                    <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#CCFF00]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     {f}
@@ -95,9 +95,9 @@ export function Pricing() {
                 href={LINE_OA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`mt-8 block rounded-full px-4 py-2.5 text-center text-sm font-medium transition ${
+                className={`mt-8 block rounded-full px-4 py-2.5 text-center text-sm font-semibold transition ${
                   t.accent
-                    ? "bg-white text-zinc-950 hover:bg-zinc-200"
+                    ? "bg-[#CCFF00] text-zinc-950 hover:bg-[#A8D400]"
                     : "border border-white/10 bg-white/5 text-white hover:bg-white/10"
                 }`}
               >
