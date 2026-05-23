@@ -12,10 +12,10 @@ export function Hero() {
         <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-6xl">
           ตัดต่อ Short-Form Video
           <br />
-          <span className="relative inline-block">
+          <span className="relative inline-block whitespace-nowrap px-3 py-1">
             <span
               aria-hidden="true"
-              className="absolute bottom-1 left-0 right-0 h-[55%] -z-10 -skew-x-3 rounded-[8px_4px_12px_4px] bg-[#CCFF00]"
+              className="absolute inset-0 -z-10 -skew-x-3 rounded-[8px_4px_12px_4px] bg-[#CCFF00]"
             />
             <span className="relative text-zinc-950">เร็วระดับ Warp Speed</span>
           </span>
