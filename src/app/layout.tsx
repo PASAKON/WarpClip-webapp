@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { LenisProvider } from "@/lib/lenis-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,9 +69,11 @@ export default function RootLayout({
       className={`${geistSans.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-zinc-950 text-zinc-100">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <LenisProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </LenisProvider>
         <Analytics />
         <SpeedInsights />
       </body>

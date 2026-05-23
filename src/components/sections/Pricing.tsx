@@ -1,4 +1,8 @@
+"use client";
+import { useRef } from "react";
+import { motion, useInView, useReducedMotion } from "motion/react";
 import { LINE_OA_URL } from "@/lib/utils";
+import { DURATIONS, EASE, STAGGER, SPRING } from "@/lib/motion-tokens";
 
 const TIERS = [
   {
@@ -45,10 +49,20 @@ const TIERS = [
 ];
 
 export function Pricing() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-15% 0px" });
+  const shouldAnimate = !useReducedMotion();
+
   return (
     <section id="pricing" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <motion.div
+          ref={ref}
+          className="mx-auto max-w-2xl text-center"
+          initial={shouldAnimate ? { opacity: 0, y: 40 } : false}
+          animate={inView || !shouldAnimate ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: DURATIONS.base, ease: EASE.outExpo }}
+        >
           <p className="text-xs font-medium uppercase tracking-widest text-zinc-400">
             Pricing
           </p>
@@ -58,18 +72,67 @@ export function Pricing() {
           <p className="mt-4 text-zinc-400">
             ราคา per คลิป. ลด 15% ถ้าจ้างเหมา ≥ 10 คลิป/เดือน.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: STAGGER.loose } },
+          }}
+          initial="hidden"
+          animate={inView || !shouldAnimate ? "show" : "hidden"}
+        >
           {TIERS.map((t) => (
-            <div
+            <motion.div
               key={t.name}
               className={`relative overflow-hidden rounded-2xl border p-8 ${
                 t.accent
-                  ? "border-[#CCFF00]/50 bg-[#CCFF00]/[0.04]"
+                  ? `border-[#CCFF00]/50 bg-[#CCFF00]/[0.04]${!shouldAnimate ? " shadow-[0_0_0_1px_rgba(204,255,0,0.4)]" : ""}`
                   : "border-white/8 bg-zinc-900"
               }`}
+              variants={
+                shouldAnimate
+                  ? {
+                      hidden: { opacity: 0, scale: 0.94, y: 24 },
+                      show: {
+                        opacity: 1,
+                        scale: 1,
+                        y: 0,
+                        transition: { ...SPRING.gentle, duration: DURATIONS.slow },
+                      },
+                    }
+                  : {
+                      hidden: { opacity: 1, scale: 1, y: 0 },
+                      show: { opacity: 1, scale: 1, y: 0 },
+                    }
+              }
             >
+              {t.accent && shouldAnimate && (
+                <motion.span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 rounded-2xl"
+                  initial={{ boxShadow: "0 0 0 0 rgba(204,255,0,0)" }}
+                  animate={
+                    inView
+                      ? {
+                          boxShadow: [
+                            "0 0 0 0 rgba(204,255,0,0)",
+                            "0 0 40px 8px rgba(204,255,0,0.2)",
+                          ],
+                        }
+                      : {}
+                  }
+                  transition={{
+                    delay: 1.4,
+                    duration: DURATIONS.slow,
+                    ease: EASE.inOutCubic,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                  }}
+                />
+              )}
+
               {t.accent && (
                 <div className="absolute right-4 top-4 rounded-full bg-[#CCFF00] px-3 py-1 text-xs font-semibold text-zinc-950">
                   ขายดี
@@ -84,8 +147,18 @@ export function Pricing() {
               <ul className="mt-6 space-y-3 text-sm text-zinc-300">
                 {t.features.map((f) => (
                   <li key={f} className="flex items-start gap-2">
-                    <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#CCFF00]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg
+                      className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#CCFF00]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                     {f}
                   </li>
@@ -103,9 +176,9 @@ export function Pricing() {
               >
                 เริ่มเลย
               </a>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

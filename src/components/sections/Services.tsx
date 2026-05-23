@@ -1,5 +1,9 @@
+"use client";
 import { Scissors, Volume2, Wand2, UserCheck, Film, LayoutTemplate } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { useRef } from "react";
+import { motion, useInView, useReducedMotion } from "motion/react";
+import { DURATIONS, EASE, STAGGER } from "@/lib/motion-tokens";
 
 type Service = {
   title: string;
@@ -40,11 +44,35 @@ const SERVICES: Service[] = [
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: DURATIONS.slow, ease: EASE.outExpo },
+  },
+};
+
+const cardVariantsStatic = {
+  hidden: { opacity: 1, y: 0 },
+  show: { opacity: 1, y: 0 },
+};
+
 export function Services() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-10% 0px" });
+  const shouldAnimate = !useReducedMotion();
+
   return (
     <section id="services" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <motion.div
+          ref={ref}
+          className="mx-auto max-w-2xl text-center"
+          initial={shouldAnimate ? { opacity: 0, y: 40 } : false}
+          animate={inView || !shouldAnimate ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: DURATIONS.base, ease: EASE.outExpo }}
+        >
           <p className="text-xs font-medium uppercase tracking-widest text-zinc-400">
             Services
           </p>
@@ -54,24 +82,33 @@ export function Services() {
           <p className="mt-4 text-zinc-400">
             ทุกบริการเสริมกันได้ — เลือกเฉพาะที่ต้องการ หรือเหมาทั้งหมด.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: STAGGER.base } },
+          }}
+          initial="hidden"
+          animate={inView || !shouldAnimate ? "show" : "hidden"}
+        >
           {SERVICES.map(({ title, desc, Icon }) => (
-            <div
+            <motion.div
               key={title}
               className="group relative overflow-hidden rounded-2xl border border-white/8 bg-zinc-900 p-6 transition hover:border-[#CCFF00]/30"
+              variants={shouldAnimate ? cardVariants : cardVariantsStatic}
+              whileHover={shouldAnimate ? { scale: 1.02, rotate: 2 } : undefined}
+              transition={{ duration: DURATIONS.fast, ease: EASE.outExpo }}
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-800 text-[#CCFF00] transition group-hover:bg-[#CCFF00]/10">
                 <Icon size={20} strokeWidth={1.75} aria-hidden="true" />
               </div>
               <h3 className="mt-4 text-lg font-semibold text-white">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-400">
-                {desc}
-              </p>
-            </div>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{desc}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
