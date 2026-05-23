@@ -1,14 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="WarpClip mark">
-  <title>WarpClip mark</title>
-  <defs>
-    <linearGradient id="warpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6366f1"/>
-      <stop offset="55%" stop-color="#7c3aed"/>
-      <stop offset="100%" stop-color="#8b5cf6"/>
-    </linearGradient>
-  </defs>
-  <rect width="100" height="100" rx="22" ry="22" fill="url(#warpGrad)"/>
-  <path d="M18 26 L32 76 L50 44 L68 76 L82 26"
-        fill="none" stroke="#ffffff" stroke-width="13"
-        stroke-linecap="round" stroke-linejoin="round"/>
+  <title>WarpClip mark, Wc monogram on black tile</title>
+  <rect width="100" height="100" rx="22" ry="22" fill="#000000"/>
+  <text x="12" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Inter', system-ui, sans-serif" font-weight="800" font-size="60" letter-spacing="-3" fill="#FFFFFF">W</text>
+  <text x="56" y="68" font-family="Georgia, 'Iowan Old Style', Charter, serif" font-style="italic" font-weight="500" font-size="66" letter-spacing="-1" fill="#FFFFFF">c</text>
 </svg>

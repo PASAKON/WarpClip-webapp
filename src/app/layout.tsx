@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Newsreader } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -11,10 +11,17 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
+  subsets: ["latin"],
+  style: "italic",
+  weight: ["500"],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://warpclip.com"),
   title: {
-    default: "WarpClip — ตัดต่อ Short-Form Video เร็วระดับ Warp Speed",
+    default: "WarpClip, ตัดต่อ Short-Form Video เร็วระดับ Warp Speed",
     template: "%s · WarpClip",
   },
   description:
@@ -34,12 +41,12 @@ export const metadata: Metadata = {
     locale: "th_TH",
     url: "https://warpclip.com",
     siteName: "WarpClip",
-    title: "WarpClip — ตัดต่อ Short-Form Video เร็วระดับ Warp Speed",
+    title: "WarpClip, ตัดต่อ Short-Form Video เร็วระดับ Warp Speed",
     description: "บริการตัดต่อคลิปสั้น TikTok / Reels / Shorts. ส่งงาน 24-48 ชม.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WarpClip — Short-Form Video Editing",
+    title: "WarpClip, Short-Form Video Editing",
     description: "ตัดต่อคลิปสั้น คุณภาพ agency ส่งงาน 24-48 ชม.",
   },
   robots: {
@@ -56,7 +63,7 @@ export default function RootLayout({
   return (
     <html
       lang="th"
-      className={`${geistSans.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${newsreader.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-zinc-950 text-zinc-100">
         <Header />

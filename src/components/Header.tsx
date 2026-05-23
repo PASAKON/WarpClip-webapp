@@ -13,10 +13,11 @@ export function Header() {
             width={28}
             height={28}
             priority
-            className="h-7 w-7 rounded-md ring-1 ring-white/10"
+            className="h-7 w-7 rounded-md"
           />
-          <span className="text-base font-semibold tracking-tight text-white">
-            WarpClip
+          <span className="text-base tracking-tight text-white">
+            <span className="font-bold">Warp</span>
+            <span className="font-serif font-medium italic">Clip</span>
           </span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm text-zinc-400 sm:flex">
@@ -28,7 +29,7 @@ export function Header() {
           href={LINE_OA_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500 px-4 py-1.5 text-sm font-medium text-zinc-950 transition hover:bg-emerald-400"
+          className="inline-flex items-center gap-1.5 rounded-full bg-[#6B8E6F] px-4 py-1.5 text-sm font-medium text-white transition hover:bg-[#7CA080]"
         >
           <span>LINE</span>
           <span className="hidden sm:inline">ติดต่อเรา</span>

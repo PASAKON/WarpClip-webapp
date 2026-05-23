@@ -7,10 +7,14 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div className="flex items-center gap-2">
-            <div className="relative h-6 w-6 overflow-hidden rounded-md bg-gradient-to-br from-indigo-500 to-violet-600">
-              <span className="absolute inset-0 flex items-center justify-center text-xs font-bold text-white">W</span>
+            <div className="relative h-6 w-6 overflow-hidden rounded-md bg-black flex items-center justify-center">
+              <span className="text-[11px] font-extrabold leading-none text-white tracking-tighter">W</span>
+              <span className="text-[12px] font-serif italic font-medium leading-none text-white -ml-0.5">c</span>
             </div>
-            <span className="text-sm font-medium text-zinc-300">WarpClip</span>
+            <span className="text-sm text-zinc-300">
+              <span className="font-medium">Warp</span>
+              <span className="font-serif font-medium italic">Clip</span>
+            </span>
           </div>
 
           <nav className="flex items-center gap-6 text-xs text-zinc-500">
