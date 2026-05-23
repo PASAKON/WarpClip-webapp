@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { LINE_OA_URL } from "@/lib/utils";
 
@@ -5,10 +6,15 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-zinc-950/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative h-7 w-7 overflow-hidden rounded-md bg-gradient-to-br from-indigo-500 to-violet-600 ring-1 ring-white/10">
-            <span className="absolute inset-0 flex items-center justify-center text-sm font-bold text-white">W</span>
-          </div>
+        <Link href="/" className="flex items-center gap-2 group" aria-label="WarpClip home">
+          <Image
+            src="/brand/mark.svg"
+            alt=""
+            width={28}
+            height={28}
+            priority
+            className="h-7 w-7 rounded-md ring-1 ring-white/10"
+          />
           <span className="text-base font-semibold tracking-tight text-white">
             WarpClip
           </span>
