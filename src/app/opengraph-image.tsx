@@ -86,6 +86,8 @@ export default function OGImage() {
         {/* Headline */}
         <div
           style={{
+            display: "flex",
+            flexWrap: "wrap",
             fontSize: 58,
             fontWeight: 800,
             color: "#ffffff",
