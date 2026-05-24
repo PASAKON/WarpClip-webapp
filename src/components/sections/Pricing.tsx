@@ -1,4 +1,9 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useInView, useReducedMotion } from "motion/react";
 import { LINE_OA_URL } from "@/lib/utils";
+import { ease, duration as dur, spring } from "@/lib/motion-tokens";
 
 const TIERS = [
   {
@@ -45,10 +50,27 @@ const TIERS = [
 ];
 
 export function Pricing() {
+  const prefersReduced = useReducedMotion();
+  const shouldAnimate = !prefersReduced;
+
+  const headingRef = useRef<HTMLDivElement>(null);
+  const headingInView = useInView(headingRef, { once: true, margin: "-10% 0px" });
+
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const cardsInView = useInView(cardsRef, { once: true, margin: "-15% 0px" });
+
   return (
     <section id="pricing" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mx-auto max-w-2xl text-center">
+
+        {/* Section heading */}
+        <motion.div
+          ref={headingRef}
+          className="mx-auto max-w-2xl text-center"
+          initial={shouldAnimate ? { opacity: 0, y: 40 } : false}
+          animate={headingInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: dur.base, ease: ease.outExpo }}
+        >
           <p className="text-xs font-medium uppercase tracking-widest text-zinc-400">
             Pricing
           </p>
@@ -58,18 +80,65 @@ export function Pricing() {
           <p className="mt-4 text-zinc-400">
             ราคา per คลิป. ลด 15% ถ้าจ้างเหมา ≥ 10 คลิป/เดือน.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Cards — sequential stagger 120ms */}
+        <motion.div
+          ref={cardsRef}
+          className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.12 } },
+          }}
+          initial={shouldAnimate ? "hidden" : false}
+          animate={cardsInView ? "show" : "hidden"}
+        >
           {TIERS.map((t) => (
-            <div
+            <motion.div
               key={t.name}
               className={`relative overflow-hidden rounded-2xl border p-8 ${
                 t.accent
                   ? "border-[#CCFF00]/50 bg-[#CCFF00]/[0.04]"
                   : "border-white/8 bg-zinc-900"
               }`}
+              variants={
+                shouldAnimate
+                  ? {
+                      hidden: { opacity: 0, scale: 0.94, y: 24 },
+                      show: {
+                        opacity: 1,
+                        scale: 1,
+                        y: 0,
+                        transition: {
+                          opacity: { duration: dur.base, ease: ease.outExpo },
+                          scale: { ...spring.gentle },
+                          y: { duration: dur.slow, ease: ease.outExpo },
+                        },
+                      },
+                    }
+                  : undefined
+              }
             >
+              {/* Pro card glow loop overlay */}
+              {t.accent && shouldAnimate && (
+                <motion.div
+                  className="pointer-events-none absolute inset-0 rounded-2xl"
+                  animate={{
+                    boxShadow: [
+                      "0 0 0 0 rgba(204,255,0,0)",
+                      "0 0 40px 8px rgba(204,255,0,0.2)",
+                    ],
+                  }}
+                  transition={{
+                    duration: dur.slow,
+                    ease: ease.inOutCubic,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    delay: 1.5,
+                  }}
+                />
+              )}
+
               {t.accent && (
                 <div className="absolute right-4 top-4 rounded-full bg-[#CCFF00] px-3 py-1 text-xs font-semibold text-zinc-950">
                   ขายดี
@@ -103,9 +172,9 @@ export function Pricing() {
               >
                 เริ่มเลย
               </a>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
