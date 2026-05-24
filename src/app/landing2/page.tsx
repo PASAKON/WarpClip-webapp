@@ -125,7 +125,7 @@ function Portfolio() {
       <div className="grid grid-cols-2 gap-px bg-white/5 sm:grid-cols-3">
         {PORTFOLIO_ITEMS.map((item, i) => (
           <div
-            key={item.id}
+            key={item.url}
             className={`group relative flex flex-col justify-end bg-zinc-950 p-6 transition hover:bg-zinc-900 ${
               i === 0 ? "sm:row-span-2" : ""
             }`}

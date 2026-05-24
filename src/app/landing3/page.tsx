@@ -161,7 +161,7 @@ function Portfolio() {
           </div>
           {PORTFOLIO_ITEMS.map((item, i) => (
             <div
-              key={item.id}
+              key={item.url}
               className="grid grid-cols-[3rem_1fr_auto] gap-4 border-b border-white/5 py-3 last:border-0"
             >
               <span className="text-zinc-700 tabular-nums">{String(i).padStart(3, "0")}</span>

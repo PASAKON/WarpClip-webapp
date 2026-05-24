@@ -1,18 +1,50 @@
-export type PortfolioItem = {
-  id: string;
-  title: string;
-  category: string;
-  tiktokUrl?: string;
-};
+/**
+ * WarpClip landing data layer.
+ *
+ * - PORTFOLIO_ITEMS: real TikTok clips from editor Oikill (PR #12)
+ * - PRICING_TIERS: 3 service tiers
+ * - SERVICES_DATA: 6 service offerings (used by landing variants)
+ */
 
-export const PORTFOLIO_ITEMS: PortfolioItem[] = [
-  { id: "1", title: "Trader Daily Recap", category: "Finance" },
-  { id: "2", title: "Product Launch Hook", category: "E-commerce" },
-  { id: "3", title: "Talking Head Series", category: "Education" },
-  { id: "4", title: "Lifestyle Vlog Cut", category: "Lifestyle" },
-  { id: "5", title: "Tutorial Walkthrough", category: "How-to" },
-  { id: "6", title: "Brand Story Teaser", category: "Branding" },
-];
+export const PORTFOLIO_ITEMS = [
+  {
+    title: "Elon จะเอา AI บนดินยกขึ้นอวกาศ",
+    creator: "NewWorldFinance",
+    category: "Tech / Crypto",
+    engagement: "36.5K likes",
+    url: "https://vt.tiktok.com/ZSx5g5YKy/",
+  },
+  {
+    title: "Exness vs IUS",
+    creator: "กอล์ฟ พัสกร",
+    category: "Finance / Trading",
+    engagement: "3.5K likes",
+    url: "https://vt.tiktok.com/ZSx5bo6vW/",
+  },
+  {
+    title: "ทำไม Big4 คือทางผ่านของคนมีฝัน",
+    creator: "RonNy BBA ตัวตึง",
+    category: "Career / Education",
+    engagement: "3.4K likes",
+    url: "https://vt.tiktok.com/ZSx5p2kaD/",
+  },
+  {
+    title: "Itdellik channel",
+    creator: "Itdellik",
+    category: "Lifestyle / Tech",
+    engagement: "15K followers · 266K likes",
+    url: "https://www.tiktok.com/@itdellik_",
+  },
+  {
+    title: "GAP คืออะไร",
+    creator: "กอล์ฟ พัสกร",
+    category: "Finance / Trading",
+    engagement: "362 likes",
+    url: "https://vt.tiktok.com/ZSx5bGQXb/",
+  },
+] as const;
+
+export type PortfolioItem = (typeof PORTFOLIO_ITEMS)[number];
 
 export const PRICING_TIERS = [
   {

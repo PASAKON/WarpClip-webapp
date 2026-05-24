@@ -123,7 +123,7 @@ function Portfolio() {
         <div className="mt-16 border-t border-white/8">
           {PORTFOLIO_ITEMS.map((item) => (
             <div
-              key={item.id}
+              key={item.url}
               className="flex items-center justify-between border-b border-white/8 py-6"
             >
               <h3 className="text-lg font-semibold text-white">{item.title}</h3>
