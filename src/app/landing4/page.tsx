@@ -128,7 +128,7 @@ function Portfolio() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {PORTFOLIO_ITEMS.map((item) => (
             <div
-              key={item.id}
+              key={item.url}
               className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-zinc-950"
             >
               <div className="absolute inset-0 bg-zinc-900/50 transition group-hover:bg-zinc-900/30" />

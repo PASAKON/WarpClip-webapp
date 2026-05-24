@@ -127,7 +127,7 @@ function Portfolio() {
       </p>
       <div className="mt-12 divide-y divide-white/8">
         {PORTFOLIO_ITEMS.map((item, i) => (
-          <div key={item.id} className="group flex items-baseline justify-between py-5">
+          <div key={item.url} className="group flex items-baseline justify-between py-5">
             <div className="flex items-baseline gap-6">
               <span className="w-6 shrink-0 text-xs tabular-nums text-zinc-700 transition group-hover:text-[#CCFF00]">
                 {String(i + 1).padStart(2, "0")}
