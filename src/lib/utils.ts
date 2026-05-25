@@ -16,4 +16,4 @@ export function cn(...inputs: ClassValue[]): string {
   return out.join(" ");
 }
 
-export const LINE_OA_URL = "https://line.me/R/ti/p/@warpclip";
+export const LINE_OA_URL = "https://line.me/R/ti/p/@341qotit";
