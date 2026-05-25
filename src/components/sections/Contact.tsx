@@ -87,7 +87,7 @@ export function Contact() {
                 }
               >
                 {LINE_ICON}
-                @warpclip
+                WarpClip Studio
               </motion.a>
 
               <motion.a
