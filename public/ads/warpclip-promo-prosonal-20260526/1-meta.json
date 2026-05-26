@@ -1,0 +1,13 @@
+{
+  "ratio": "9:16",
+  "accent_hex_used": "#6B8E6F",
+  "placement": "Reels / Stories",
+  "file_size_kb": 1097,
+  "gen_model": "openai/gpt-image-2",
+  "gen_cost_usd": 0.1462,
+  "image_size": {
+    "width": 1088,
+    "height": 1920
+  },
+  "iteration_count": 1
+}

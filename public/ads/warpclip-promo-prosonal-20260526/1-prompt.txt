@@ -1,0 +1,31 @@
+Design a vertical 9:16 social media advertisement (Reels / Stories format) for WarpClip, a Thai video editing service.
+
+Overall aesthetic: premium editorial advertisement. Strict two-tone palette: near-black (#0a0a0a) background with pure white typography. One accent color only: sage green (#6B8E6F) used sparingly on the "Pro" letters in "Prosonal" and the final pipeline node "Ready".
+No gradients. No rainbow colors. No sparkles. No neon glow. No competitor-style overlays.
+Font style: clean geometric sans-serif for Thai text, bold condensed for English emphasis words.
+Layout is crisp, minimal, professional. Finance / life-coach influencer style: polished, authoritative, readable at a glance on mobile.
+
+LAYOUT top to bottom:
+
+[TOP SECTION 35% of height]
+Large bold headline in two lines:
+Line 1 Thai: "เปลี่ยน Personal Video ให้เป็น" white text large
+Line 2: "Prosonal Video" where the letters "Pro" are in sage green #6B8E6F bold and "sonal Video" is in white bold. Wordplay must be readable at a glance.
+Below headline: smaller subtitle in light gray: "Trader. นักลงทุน. Life Coach content."
+
+[MIDDLE SECTION 35% of height]
+Vertical three-stage pipeline diagram centered:
+Box 1: "Raw video" white border white text
+Arrow down with label "research + theme" in gray
+Box 2: "Design" white border white text
+Arrow down with label "effects + subtitle" in gray
+Box 3: "Ready" sage green #6B8E6F filled background white text bold. This is the only colored box.
+Clean minimal boxes with rounded corners.
+
+[BOTTOM SECTION 30% of height]
+Pricing row: "฿900" large bold white, beside it "฿1,590" with a clear strikethrough line in gray
+Feature row separated by middle dots: "≤ 3 นาที  .  แก้ฟรี 3 ครั้ง  .  ส่งใน 3 วัน" small white text
+Bottom bar: black square tile with "Wc" monogram in white, then wordmark "WarpClip" beside it
+CTA right side: "ทักผ่าน Messenger" with arrow, white outline pill button, small Messenger chat-bubble icon outline
+
+Thai script and numbers must render crisp and accurate.

@@ -1,0 +1,13 @@
+{
+  "ratio": "1:1",
+  "accent_hex_used": "#6B8E6F",
+  "placement": "Feed square",
+  "file_size_kb": 1040,
+  "gen_model": "openai/gpt-image-2",
+  "gen_cost_usd": 0.0829,
+  "image_size": {
+    "width": 1088,
+    "height": 1088
+  },
+  "iteration_count": 1
+}

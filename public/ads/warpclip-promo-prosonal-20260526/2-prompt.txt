@@ -1,0 +1,27 @@
+Design a square 1:1 social media advertisement for Facebook Feed for WarpClip, a Thai video editing service.
+
+Overall aesthetic: premium editorial advertisement. Strict two-tone palette: near-black (#0a0a0a) background with pure white typography. One accent color only: sage green (#6B8E6F) used sparingly on the "Pro" letters in "Prosonal" and the final pipeline node "Ready".
+No gradients. No rainbow colors. No sparkles. No neon glow. No competitor-style overlays.
+Font style: clean geometric sans-serif for Thai text, bold condensed for English emphasis words.
+Layout is crisp, minimal, professional. Finance / life-coach influencer style: polished, authoritative, readable at a glance on mobile.
+
+LAYOUT adapted for square format:
+
+[TOP BAND 25% of height]
+Headline stacked tight:
+"เปลี่ยน Personal Video ให้เป็น"
+"Prosonal Video" where "Pro" is in sage green #6B8E6F bold and "sonal Video" is white bold
+Subtitle: "Trader. นักลงทุน. Life Coach content." small gray text
+
+[MIDDLE SECTION 40% of height]
+Horizontal three-stage pipeline compressed for square:
+[Raw video] right arrow research + theme right arrow [Design] right arrow effects + subtitle right arrow [Ready]
+Boxes are small rounded-corner labels. Raw video and Design: white outline white text. Ready: sage green #6B8E6F filled white text.
+Connecting arrows and process labels in light gray, compact and legible.
+
+[BOTTOM SECTION 35% of height]
+Two columns:
+Left column: "฿900" large bold white, "฿1,590" strikethrough gray below, then "≤ 3 นาที . แก้ฟรี 3 ครั้ง . ส่งใน 3 วัน" small
+Right column: black tile "Wc" monogram, CTA "ทักผ่าน Messenger" with arrow and Messenger icon
+
+Clean compact no wasted space. Thai text and numbers crisp.
