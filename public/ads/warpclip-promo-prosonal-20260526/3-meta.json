@@ -1,0 +1,13 @@
+{
+  "ratio": "4:5",
+  "accent_hex_used": "#6B8E6F",
+  "placement": "Feed mobile-tall",
+  "file_size_kb": 890,
+  "gen_model": "openai/gpt-image-2",
+  "gen_cost_usd": 0.1036,
+  "image_size": {
+    "width": 1088,
+    "height": 1360
+  },
+  "iteration_count": 1
+}
